@@ -1,6 +1,6 @@
 # Projeto Pokedex
 
-imagem do projeto
+## Imagem do projeto
 <p style="align=center;">
   <img src="https://github.com/ThallysCezar/pokedex-react/blob/main/public/imagem-proj.jpeg" alt="image-projec">
 </p>
