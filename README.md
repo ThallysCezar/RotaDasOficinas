@@ -1,5 +1,8 @@
 # Projeto Pokedex
 
+imagem do projeto
+(https://github.com/ThallysCezar/pokedex-react/blob/main/public/imagem-proj.jpeg)
+
 
 Esse projeto foi feito por mim, porem, foi com ajuda do youtube e muitas pesqusisas. Usando, dessa forma, as tecnologias: React, JavaScript, HTML ,CSS e API(PokeApi)
 
