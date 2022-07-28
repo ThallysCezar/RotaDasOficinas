@@ -23,7 +23,7 @@ const SearchBar = (props) => {
     return (
         <div className="searchbar-container">
             <div className="searchbar">
-                <input placeholder="Search Pokemons" onChange={onChangeHandler}/>
+                <input type="email" name="email" id="exampleEmail" placeholder="Search Pokemons" onChange={onChangeHandler}/>
             </div>
             <div className="searchbar-btn">
                 <button onClick={onButtonClickHandler}> Search </button>
