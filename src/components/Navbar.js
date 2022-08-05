@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import FavoriteContexts from "./contexts/favoriteContexts";
 
-const Navbar = () => {
+
+
+const Navbar = (props) => {
   const { favoritePokemons } = useContext(FavoriteContexts);
   //usando uma variavel para receber o link, para assim, usar no src da img
   const logoPokeapi =
