@@ -4,6 +4,9 @@ import Pagination from './../Pagination';
 
 const Pokedex = (props) => {
   const { pokemons, loading, totalPages, setPage, page } = props;
+  /**
+   * If the page is greater than 0, then set the page to the current page minus 1.
+   */
   const onLeftClickHandler = () => {
     if(page>0) {
         setPage(page-1);

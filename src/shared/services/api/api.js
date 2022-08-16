@@ -29,3 +29,10 @@ export const getPokemonData = async (url) => {
         console.log("error: ", error)
     }
 }
+
+export const getList = async () => {
+    let url = "https://jsonplaceholder.typicode.com/posts";
+    const response = await fetch(url);
+    const data = response.json();
+    return data;
+  };

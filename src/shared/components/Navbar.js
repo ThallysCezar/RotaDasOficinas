@@ -1,20 +1,59 @@
-import React, { useContext } from "react";
-import FavoriteContexts from "./contexts/favoriteContexts";
+import React from "react";
+import { Link } from "react-router-dom";
 
 
 
-const Navbar = (props) => {
-  const { favoritePokemons } = useContext(FavoriteContexts);
-  //usando uma variavel para receber o link, para assim, usar no src da img
-  const logoPokeapi =
-    "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
-  return (
-    <nav>
-      <div>
-        <img alt="pokeapi-logo" src={logoPokeapi} className="navbar-img" />
-      </div>
-      <div>{favoritePokemons.length}💜</div>
-    </nav>
+const Navbar = () => {
+  return (  
+    <div>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container-fluid">
+          <p className="navbar-brand" href="#">
+            Frameworks Padawan
+          </p>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" aria-current="page" to="/home">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/albums">
+                  Albums
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/posts">
+                  Posts
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/todos">
+                  Todos
+                </Link>
+              </li>
+            </ul>
+            <form className="d-flex" role="search">
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+              <button className="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      {/* THIS ONE IS A VALID COMMENT */}
+    </div>
   );
 };
 
