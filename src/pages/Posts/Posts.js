@@ -27,28 +27,26 @@ export default function Posts() {
   return (
     <div>
       <Navbar/>
-        {posts.map(({ userId, id, title, body }) => (
           <div className="table-responsive">
-            <table className="table table-hove tabler-bordered w-100 p-3">
+            <table className="table table-hove table-sm">
               <thead>
                 <tr>
-                  <th scope="col">User</th>
-                  <th scope="col" key={id}>ID</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Body</th>
+                  <th>User</th>
+                  <th>Title</th>
+                  <th>Body</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="text-center">{userId}</td>
-                  <td className="text-center">{id}</td>
-                  <td>{title}</td>
-                  <td>{body}</td>
+              {posts.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.userId}</td>
+                  <td>{item.title}</td>
+                  <td>{item.body}</td>
                 </tr>
+              ))}
               </tbody>
             </table>
           </div>
-        ))}
     </div>
   );
 }
