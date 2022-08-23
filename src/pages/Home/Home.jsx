@@ -1,25 +1,85 @@
-import React from "react";
-import Navbar from '../../shared/components/Navbar';
-import Footer from "../../shared/components/Footer";
+import Navbar from "../../shared/components/NavBar/Navbar";
+import { GiDeathStar } from "react-icons/gi";
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-import image from "../../assets/bg.jpg"; 
+import image from "../../assets/bg.jpg";
 
 const Home = () => {
   return (
-    <div style={{ backgroundImage:`url(${image})` }}>
-      <Navbar/>
-        <div className="container-fluid text-white text-center pt-5">
-          <h3>Quem eu sou?</h3>
-          <img src={require('../../assets/me.jpg')} className="rounded-circle img-fluid h-50 w-50"  alt="Quem sou eu"/>
-          <h4>Sou um pequeno programador</h4>
+    <div style={{ backgroundImage: `url(${image})` }}>
+      <Navbar />
+      <div className="container-fluid text-white text-center pt-5">
+        <h3>Bem-vindo!</h3>
+        <h5>
+          Seja bem-vindo(a), esse é o meu projeto para o desafio de programação
+          da Framework: Padawans!
+        </h5>
+        <div className="container-fluid text-center">
+          <h3>Mas quem sou eu?</h3>
+          <p>Para saber mais sobre mim, basta clicar aqui!</p>
+          {/* Portfolio */}
+          <Link
+            className="btn btn-outline-light btn-floating m-1"
+            to="thallyscezar.github.io"
+            role="button"
+            target="_blank"
+          >
+            <GiDeathStar />
+          </Link>
+        </div>
+        <div>
+          <div className="container footer__social">
+            {/* GitHub */}
+            <Link
+              className="btn btn-outline-light btn-floating m-1"
+              to="github.com/thallyscezar"
+              role="button"
+              target="_blank"
+            >
+              <FaGithub />
+            </Link>
 
-          <div className="container-fluid text-center">
-            <h3>What Am I?</h3>
-            <p>Lorem ipsum..</p>
+            {/* Facebook */}
+            <Link
+              className="btn btn-outline-light btn-floating m-1"
+              to="facebook.com/thallyscezar"
+              role="button"
+              target="_blank"
+            >
+              <FaFacebook />
+            </Link>
+
+            {/* Instagram */}
+            <Link
+              className="btn btn-outline-light btn-floating m-1"
+              to="instagram.com/thallyscezar"
+              role="button"
+              target="_blank"
+            >
+              <FaInstagram />
+            </Link>
+
+            {/* Linkedin */}
+            <Link
+              className="btn btn-outline-light btn-floating m-1"
+              to="linkedin.com/in/thallyscezar"
+              role="button"
+              target="_blank"
+            >
+              <FaLinkedin />
+            </Link>
+
+            {/* Section: Text */}
+            <section className="mb-4 mt-2">
+              <p>Fiz esse site com React, com React-Icon e BootStrap</p>
+            </section>
+            {/* Section: Text */}
           </div>
-          <Footer/>
+          {/* Grid container */}
         </div>
       </div>
+    </div>
   );
 };
 

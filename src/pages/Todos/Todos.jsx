@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../shared/components/Navbar";
+import Navbar from "../../shared/components/NavBar/Navbar";
 import { useEffect, useState } from "react";
 
 export default function Todos()  {
