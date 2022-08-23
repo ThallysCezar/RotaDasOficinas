@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from './../../shared/components/Navbar';
+import Navbar from '../../shared/components/Navbar';
 import Footer from "../../shared/components/Footer";
 
 import image from "../../assets/bg.jpg"; 
