@@ -3,21 +3,27 @@ import { GiDeathStar } from "react-icons/gi";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import image from "../../assets/bg.jpg";
 
 const Home = () => {
+
+  const styleCenter = {
+    position:" relative",
+    left: "0px",
+    top: "117px",
+    transition: "none 0s ease 0s"
+  }
+
   return (
-    <div style={{ backgroundImage: `url(${image})` }}>
+    <div>
       <Navbar />
-      <div className="container-fluid text-white text-center pt-5">
-        <h3>Bem-vindo!</h3>
+      <div style={styleCenter} className="container-fluid text-white text-center pt-5 align-items-center">
+        <h1>Bem-vindo!</h1>
         <h5>
           Seja bem-vindo(a), esse é o meu projeto para o desafio de programação
           da Framework: Padawans!
         </h5>
-        <div className="container-fluid text-center">
-          <h3>Mas quem sou eu?</h3>
-          <p>Para saber mais sobre mim, basta clicar aqui!</p>
+        <div className="container-fluid text-center mt-5">
+          <h3>Mas, quem sou eu?</h3>
           {/* Portfolio */}
           <Link
             className="btn btn-outline-light btn-floating m-1"
@@ -28,6 +34,8 @@ const Home = () => {
             <GiDeathStar />
           </Link>
         </div>
+        <br/>
+        <p>E aqui, minhas redes sociais, para mais informações</p>
         <div>
           <div className="container footer__social">
             {/* GitHub */}
@@ -61,18 +69,19 @@ const Home = () => {
             </Link>
 
             {/* Linkedin */}
-            <Link
+            <Link 
+              to={{pathname: "linkedin.com/in/thallyscezar"}}
+              exact
               className="btn btn-outline-light btn-floating m-1"
-              to="linkedin.com/in/thallyscezar"
               role="button"
               target="_blank"
             >
               <FaLinkedin />
-            </Link>
+            </Link >
 
             {/* Section: Text */}
             <section className="mb-4 mt-2">
-              <p>Fiz esse site com React, com React-Icon e BootStrap</p>
+              <p>Fiz esse projeto usando as seguintes tecnologias: React, React-Icon e BootStrap</p>
             </section>
             {/* Section: Text */}
           </div>

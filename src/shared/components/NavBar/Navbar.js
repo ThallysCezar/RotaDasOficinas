@@ -40,15 +40,11 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/todos">
+              <Link className="nav-link" to="/todos">
                   Todos
                 </Link>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button className="btn btn-outline-secondary" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>

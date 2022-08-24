@@ -21,8 +21,8 @@ export default function Albuns() {
   return (
     <div>
       <Navbar />
-      <div className="table-responsive">
-        <table className="table table-hove table-sm">
+      <div className="table-responsive container pt-4 shadow-lg p-3 mb-5 mt-4">
+        <table className="table table-hover table-sm">
           <thead>
             <tr>
               <th>User</th>
