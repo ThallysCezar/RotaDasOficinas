@@ -1,9 +1,16 @@
 import React from "react";
-import Navbar from "../../shared/components/NavBar/Navbar";
 import { useEffect, useState } from "react";
+import Navbar from './../../shared/components/navbar/Navbar';
 
-export default function Albuns() {
+export default function Desafio1() {
   const [posts, setPosts] = useState([]);
+
+  const styleNavBar = {
+    position: "relative",
+    left: "611px",
+    top: "27px",
+    transition: "none 0s ease 0s"
+  }
 
   const url = "https://jsonplaceholder.typicode.com/albums";
 
@@ -20,7 +27,9 @@ export default function Albuns() {
 
   return (
     <div>
-      <Navbar />
+      <div style={styleNavBar} className="justify-content-center">
+        <Navbar/>
+      </div>
       <div className="table-responsive container pt-4 shadow-lg p-3 mb-5 mt-4">
         <table className="table table-hover table-sm">
           <thead>

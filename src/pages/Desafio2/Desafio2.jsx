@@ -3,13 +3,18 @@ import { useEffect, useState } from "react";
 
 import ReactPaginate from "https://cdn.skypack.dev/react-paginate@7.1.0";
 
-import Navbar from "../../shared/components/NavBar/Navbar";
 import axios from "axios";
+import Navbar from './../../shared/components/navbar/Navbar';
 
-export default function Posts() {
+export default function Desafio2() {
   const [posts, setPosts] = useState([]);
-  const [page, setPage] = useState(1);
-  const [count, setCount] = useState(0);
+
+  const styleNavBar = {
+    position: "relative",
+    left: "611px",
+    top: "27px",
+    transition: "none 0s ease 0s"
+  }
 
   const getPost = (page = 1) => {
     axios
@@ -33,7 +38,9 @@ export default function Posts() {
 
   return (
     <div>
-      <Navbar />
+      <div style={styleNavBar} className="justify-content-center">
+        <Navbar/>
+      </div>
       <div className="table-responsive container pt-4 shadow-lg p-3 mb-5 mt-4">
         <table className="table table-hover table-sm">
           <thead>

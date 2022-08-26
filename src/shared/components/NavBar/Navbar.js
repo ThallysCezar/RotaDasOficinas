@@ -5,43 +5,29 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (  
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark shadow-5-strong">
         <div className="container-fluid">
-          <p className="navbar-brand" href="#">
-            Frameworks Padawan
-          </p>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
+          <div className="collapse navbar-collapse">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/home">
+                <Link className="nav-link text-white" aria-current="page" to="/home">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/albums">
-                  Albums
+                <Link className="nav-link text-white" to="/des1">
+                  Desafio 1
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/posts">
-                  Posts
+                <Link className="nav-link text-white" to="/des2">
+                Desafio 2
                 </Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" to="/todos">
-                  Todos
+                <Link className="nav-link text-white" to="/des3">
+                  Desafio 3
                 </Link>
               </li>
             </ul>
@@ -49,7 +35,7 @@ const Navbar = () => {
         </div>
       </nav>
       {/* THIS ONE IS A VALID COMMENT */}
-    </div>
+    </>
   );
 };
 
