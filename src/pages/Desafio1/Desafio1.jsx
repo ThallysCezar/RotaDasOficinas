@@ -1,31 +1,28 @@
-import React from 'react';
-import { InputText } from 'primereact/inputtext';
+import React, { Component } from 'react';
 import { Message } from 'primereact/message';
-import { Button } from 'primereact/button';
 import './Desafio1.css';
-import { useState, useEffect } from 'react';
-import { Card } from 'primereact/card';
+import Navbar from './../../shared/components/navbar/Navbar';
 
-export default function Convert() {
+class Desafio1 extends Component {
+  state = {
+    romanDictionnary: {},
+    roman: '',
+    romanErrorMessage: '',
+    arabic: '',
+    arabicErrorMessage: ''
+  }
 
-  const [romanNumbers, setRomanNumbers] = useState({});
-  const [roman, setRoman] = useState();
-  const [romanErrorMessage ,setRomanErrorMessage] = useState();
-  const [arabic, setArabic] = useState();
-  const [arabicErrorMessage, setArabicErrorMessage] = useState();
-
-  setRomanNumbers('IVXLCDM');
-  // eslint-disable-next-line no-undef
+  romanNumbers = 'IVXLCDM';
   allowedRegExp = /^[IVXLCDM]+$/i;
 
-  const arabicGetDivisibleBy = (value, romChar, arabRange) => {
+  arabicGetDivisibleBy = (value, romChar, arabRange) => {
     const replicant = Math.floor(value / arabRange);
     const convert = romChar.repeat(Math.floor(value / arabRange));
     const remain = value - replicant * arabRange;
     return {convert, remain};
   };
 
-  const specialRomanRules = (roman) => {
+  specialRomanRules = (roman) => {
     let transformed = roman;
     transformed = transformed.replace('DCCCC', 'CM'); // 900
     transformed = transformed.replace('CCCC', 'CD'); // 400
@@ -36,56 +33,55 @@ export default function Convert() {
     return transformed;
   };
 
-  const arabicConvert = (value) => {
+  arabicConvert = (value) => {
     let data = {
       convert: '',
       remain: parseInt(value)
     };
     let result = '';
 
-    data = arabicGetDivisibleBy(data.remain, 'M', 1000);
+    data = this.arabicGetDivisibleBy(data.remain, 'M', 1000);
     result += data.convert;
-    data = arabicGetDivisibleBy(data.remain, 'D', 500);
+    data = this.arabicGetDivisibleBy(data.remain, 'D', 500);
     result += data.convert;
-    data = arabicGetDivisibleBy(data.remain, 'C', 100);
+    data = this.arabicGetDivisibleBy(data.remain, 'C', 100);
     result += data.convert;
-    data = arabicGetDivisibleBy(data.remain, 'L', 50);
+    data = this.arabicGetDivisibleBy(data.remain, 'L', 50);
     result += data.convert;
-    data = arabicGetDivisibleBy(data.remain, 'X', 10);
+    data = this.arabicGetDivisibleBy(data.remain, 'X', 10);
     result += data.convert;
-    data = arabicGetDivisibleBy(data.remain, 'V', 5);
+    data = this.arabicGetDivisibleBy(data.remain, 'V', 5);
     result += data.convert;
-    data = arabicGetDivisibleBy(data.remain, 'I', 1);
+    data = this.arabicGetDivisibleBy(data.remain, 'I', 1);
     result += data.convert;
 
-    return specialRomanRules(result);
+    return this.specialRomanRules(result);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const initRomanDictionnary = () => {
-    const max = 5000;
+  initRomanDictionnary = () => {
+    const max = 4000;
     const romanDictionnary = {};
     for (let i = 1; i < max; i++) {
-      const roman = arabicConvert(i);
+      const roman = this.arabicConvert(i);
       romanDictionnary[roman] = i;
     }
     this.setState({romanDictionnary});
   };
 
-  const errorMessage = (message) => {
+  errorMessage = (message) => {
     if (!!message) return <Message severity="error" text={message} />;
     return null;
   };
 
-  const invalidRomanNumber = (input) => {
+  invalidRomanNumber = (input) => {
     let error = 'This is not a valid Roman number.';
-    const transformed = specialRomanRules(input);
+    const transformed = this.specialRomanRules(input);
     if (transformed in this.state.romanDictionnary) error = `${error} Did you mean '${transformed}' instead?`;
 
     return error;
   };
 
-  const handleChangeRoman = (e) => {
+  handleChangeRoman = (e) => {
     const input = e.target.value.toUpperCase();
     const roman = input;
     let arabic = '';
@@ -94,15 +90,15 @@ export default function Convert() {
 
     if (!input.trim()) return this.setState({roman: '', arabic, romanErrorMessage});;
 
-    if (!this.allowedRegExp.test(input)) romanErrorMessage = `Only ${romanNumbers} are valid.`;
+    if (!this.allowedRegExp.test(input)) romanErrorMessage = `Only ${this.romanNumbers} are valid.`;
     
-    if (!(input in this.state.romanDictionnary)) romanErrorMessage = invalidRomanNumber(input);
+    if (!(input in this.state.romanDictionnary)) romanErrorMessage = this.invalidRomanNumber(input);
     else arabic = this.state.romanDictionnary[roman];
 
     this.setState({roman, arabic, romanErrorMessage, arabicErrorMessage});
   };
 
-  const handleChangeArabic = (e) => {
+  handleChangeArabic = (e) => {
     const value = e.target.value;
     let arabic = parseInt(value);
     let roman = '';
@@ -110,13 +106,13 @@ export default function Convert() {
     let arabicErrorMessage = '';
 
     if (!value) arabic = '';
-    else if (arabic < 0 || arabic >= 5000) arabicErrorMessage = 'Only positive number lower than 5000 are allowed.';
-    else roman = arabicConvert(arabic);
+    else if (arabic < 0 || arabic >= 3999) arabicErrorMessage = 'Only positive number lower than 3999 are allowed.';
+    else roman = this.arabicConvert(arabic);
 
     this.setState({arabic, roman, arabicErrorMessage, romanErrorMessage});
   };
 
-  const handleReset = (e) => {
+  handleReset = (e) => {
     e.preventDefault();
     const roman = '';
     const romanErrorMessage = '';
@@ -125,58 +121,63 @@ export default function Convert() {
     this.setState({roman, romanErrorMessage, arabic, arabicErrorMessage});
   };
 
+  componentDidMount() {
+    this.initRomanDictionnary();
+  }
 
-  useEffect(() => {
-    initRomanDictionnary();
-  }, [initRomanDictionnary]);
-
+  render() { 
     return (
-      <Card title="Convertion" subTitle="Roman <-> Arabic">
-        <div className="p-grid p-justify-between p-fluid app-converter">
-          <div className="p-col">
-            <span className="p-float-label">
-              <InputText
-                id="roman"
-                className={{'p-error': !!this.state.romanErrorMessage}}
-                value={this.state.roman}
-                onChange={handleChangeRoman}
-                keyfilter={this.allowedRegExp}
-              />
-              <label htmlFor="roman">Roman</label>
-            </span>
-            {this.errorMessage(this.state.romanErrorMessage)}
-          </div>
-          <div className="p-col-3 app-arrows">
-            <div className="p-grid p-justify-center">
-              <div className="p-col-12">
-                <span className="pi pi-pw pi-chevron-left"></span>
-                <span className="pi pi-pw pi-minus"></span>
-                <span className="pi pi-pw pi-chevron-right"></span>
+      <>
+      <div className="navigacao">
+        <Navbar/>
+      </div>
+      {/* Aqui comeca o form */}
+      <div>
+      {/* Section: Design Block */}
+        <section className="text-center text-lg-start">
+          {/* Jumbotron */}
+          <div className="container py-4">
+            <div className="row g-0 align-items-center">
+              <div className="col-lg-6 mb-5 mb-lg-0">
+                <div className="card cascading-right card1">
+                  <div className="card-body p-5 shadow-5 text-center card-corpo">
+                    <h2 className="fw-bold mb-5">Converção dos números arábicos e romanos!</h2>
+                    <form>
+                      {/* Email input */}
+                      <div className="form-outline mb-4">
+                        <input type="name" id="roman" className={`${{'p-error': !!this.state.romanErrorMessage}} ${"form-control"}`} value={this.state.roman} onChange={this.handleChangeRoman} keyfilter={this.allowedRegExp}/>
+                        <label className="form-label" for="form3Example3">N° Romano</label>
+                        {this.errorMessage(this.state.romanErrorMessage)}
+                      </div>
+
+                      {/* Password input */}
+                      <div className="form-outline mb-4">
+                        <input type="name" id="arabic" className={`${{'p-error': !!this.state.arabicErrorMessage}} ${"form-control"}`} value={this.state.arabic} onChange={this.handleChangeArabic} keyfilter="pint" />
+                        <label className="form-label" for="form3Example4">N° Arábico</label>
+                        {this.errorMessage(this.state.arabicErrorMessage)}
+                      </div>
+                      {/* Submit button */}
+                      <button type="submit" className="btn btn-primary btn-block mb-4 p-button-info" onClick={this.handleReset}
+                      icon="pi pi-pw pi-replay" label="reset">
+                        Reiniciar Conversão
+                      </button>
+                    </form>
+                  </div>
+                </div>
               </div>
-              <div className="p-col-12 p-sm-8 p-md-6 p-lg-4">
-                <Button
-                  onClick={handleReset}
-                  icon="pi pi-pw pi-replay"
-                  className="p-button-info"
-                  label="reset"
-                />
+
+              <div className="col-lg-6 mb-5 mb-lg-0">
+                <h1 className='text-white texto-h1'>Desafio 1</h1>
               </div>
             </div>
           </div>
-          <div className="p-col">
-            <span className="p-float-label">
-              <InputText
-                id="arabic"
-                className={{'p-error': !!this.state.arabicErrorMessage}}
-                value={this.state.arabic}
-                onChange={handleChangeArabic}
-                keyfilter="pint"
-              />
-              <label htmlFor="arabic">Arabic</label>
-            </span>
-            {this.errorMessage(this.state.arabicErrorMessage)}
-          </div>
-        </div>
-      </Card>
+          {/* Jumbotron */}
+        </section>
+        {/* Section: Design Block */}
+      </div>
+    </>
     );
+  }
 }
+ 
+export default Desafio1;

@@ -14,9 +14,9 @@ export const AppRoutes = () => {
             <Routes>
                     <Route path="/home" element={ <Home/> }/>
                     <Route exact path="/" element={ <Home/> }/>
-                    <Route path="/des1" element={ <Desafio2/> }/>
-                    <Route path="/des2" element={ <Desafio3/> }/>
-                    <Route path="/des3" element={ <Desafio1/> }/>
+                    <Route path="/des1" element={ <Desafio1/> }/>
+                    <Route path="/des2" element={ <Desafio2/> }/>
+                    <Route path="/des3" element={ <Desafio3/> }/>
             </Routes>
     );
 };
