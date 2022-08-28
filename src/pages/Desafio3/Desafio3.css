@@ -26,6 +26,12 @@
   transition: none 0s ease 0s;
 }
 
+.meio {
+  position: relative;
+  left: 24px;
+  top: 55px;
+}
+
 .cascading-right {
   margin-right: -50px;
 }
@@ -38,14 +44,21 @@
 
 .btn-split {
   position: relative;
-  left: -15px;
-  top: 8px;
+   left: -48px;
+    top: -4px;
 }
 
 .btn-reset {
   position: relative;
-  left: 8px;
-  top: 8px;
+  left: 9px;
+  top: -3px;
+}
+
+.text-h4{
+  position: relative;
+  left: 126px;
+  top: 12px;
+  transition: none 0s ease 0s;
 }
 
 @media (max-width: 991.98px) {
