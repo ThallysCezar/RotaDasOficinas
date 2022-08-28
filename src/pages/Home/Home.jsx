@@ -2,7 +2,7 @@
 import React from "react";
 import { GiDesk } from "react-icons/gi";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import Navbar from '../../shared/components/navbar/Navbar.js';
+import Navbar from '../../components/navbar/Navbar.js';
 
 
 const Home = () => {

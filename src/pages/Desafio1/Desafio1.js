@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Message } from 'primereact/message';
 import './Desafio1.css';
-import Navbar from '../../shared/components/navbar/Navbar.js';
+import Navbar from '../../components/navbar/Navbar.js';
 
 class Desafio1 extends Component {
   state = {

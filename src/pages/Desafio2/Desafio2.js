@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Navbar from '../../shared/components/navbar/Navbar.js';
+import Navbar from '../../components/navbar/Navbar.js';
 
 
 export default function Desafio2() {

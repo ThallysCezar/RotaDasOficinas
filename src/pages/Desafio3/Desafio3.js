@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from '../../shared/components/navbar/Navbar.js';
+import Navbar from '../../components/navbar/Navbar.js';
 import "./Desafio3.css";
 
 export default function Desafio3() {
