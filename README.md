@@ -2,11 +2,11 @@
 
 ## Imagens do projeto
 <p style="align=center;">
-  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/public/imagem-proj1.jpeg" alt="image-projec">
+  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/public/imagem-proj1.jpeg" alt="image-projec1">
 </p>
 
 <p style="align=center;">
-  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/public/imagem-proj2.jpeg" alt="image-projec">
+  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/public/imagem-proj2.jpeg" alt="image-projec2">
 </p>
 
 
@@ -18,23 +18,23 @@ Esse projeto foi feito por mim, porem, como não estava conseguindo uma lógica 
 
 1 - Baixar o arquivo, código em sua máquina
 <p style="align=center;">
-  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/public/imagem-proj1.jpeg" alt="image-projec">
+  <img src="hhttps://github.com/ThallysCezar/RotaDasOficinas/blob/main/src/assets/github.jpeg" alt="github">
 </p>
 2 - Extrair o arquivo em sua máquina
 <p style="align=center;">
-  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/public/imagem-proj1.jpeg" alt="image-projec">
+  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/src/assets/extrair.jpeg" alt="extrair">
 </p>
 3 - Abrir o terminal e rodar o comando
 
 #### `npm start`
 
 <p style="align=center;">
-  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/public/imagem-proj1.jpeg" alt="image-projec">
+  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/src/assets/terminal.jpeg" alt="terminal">
 </p>
 
 4 - Caso queira ver o código, basta abrir o editor de sua preferência
 <p style="align=center;">
-  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/public/imagem-proj1.jpeg" alt="image-projec">
+  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/src/assets/abrirCode.jpeg" alt="code">
 </p>
 
 
