@@ -1,61 +1,57 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import Navbar from './../../shared/components/navbar/Navbar';
+
 
 export default function Desafio2() {
-  return (
-    <>
-      <div>
-        <div className="wrapper">
-          <div className="header">Bill Splitter</div>
-          <form className="insert">
-            <label id="totalL">
-              <i className="fas fa-coins"></i>How much?
-            </label>
-            <input type="number" id="total" placeholder="add the total" />
-            <label id="totalL">
-              <i className="fas fa-users"></i>How many?
-            </label>
-            <input
-              type="number"
-              id="people"
-              placeholder="add the number of people"
-            />
-            <label id="tipL">
-              <i className="fas fa-heart"></i>Feelin' generous?
-              <button id="addTip">Add a tip</button>
-            </label>
-            <div id="tipButtons">
-              <input
-                type="number"
-                id="tipPercent"
-                placeholder="add % of the total"
-              />
-              <input
-                type="number"
-                id="tipCustom"
-                placeholder="add your custom tip"
-              />
-            </div>
+  const [posts, setPosts] = useState([]);
 
-            <div className="buttonSpace">
-              <button id="splitBtn">Split!</button>
-              <button id="resetBtn">Reset</button>
-            </div>
-            <div id="perPerson">0</div>
-          </form>
-        </div>
-        {/* no total */}
-        <div className="input-group mb-3">
-          <span className="input-group-text">$</span>
-          <span className="input-group-text">0.00</span>
-          <input type="text" placeholder="How much?" className="form-control" aria-label="Dollar amount (with dot and two decimal places)" />
-        </div>
-        {/* pra quantas pessoas */}
-        <div className="input-group mb-3">
-          <span className="input-group-text">$</span>
-          <span className="input-group-text">0.00</span>
-          <input type="text" placeholder="How many?" className="form-control" aria-label="Dollar amount (with dot and two decimal places)" />
-        </div>
-      </div>
-    </>
+  const styleNavBar = {
+    position: "relative",
+    left: "611px",
+    top: "27px",
+    transition: "none 0s ease 0s"
+  }
+
+  const url = "https://jsonplaceholder.typicode.com/todos";
+
+  useEffect(() => {
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          return Error("Oh no");
+        }
+        return res.json();
+      })
+      .then((data) => setPosts(data));
+  });
+
+
+  return (
+    <div>
+    <div style={styleNavBar} className="justify-content-center">
+      <Navbar/>
+    </div>
+    <div className="table-responsive container pt-4 shadow-lg p-3 mb-5 mt-4">
+      <table className="table table-hover table-sm">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Title</th>
+            <th>Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {posts.map((item) => (
+            <tr key={item.id}>
+              <td>{item.userId}</td>
+              <td>{item.title}</td>
+              <td>{item.completed}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
   );
 }

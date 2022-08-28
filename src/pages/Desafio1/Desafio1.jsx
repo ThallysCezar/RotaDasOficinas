@@ -143,14 +143,14 @@ class Desafio1 extends Component {
                   <div className="card-body p-5 shadow-5 text-center card-corpo">
                     <h2 className="fw-bold mb-5">Converção dos números arábicos e romanos!</h2>
                     <form>
-                      {/* Email input */}
+                      {/* Roman input */}
                       <div className="form-outline mb-4">
                         <input type="name" id="roman" className={`${{'p-error': !!this.state.romanErrorMessage}} ${"form-control"}`} value={this.state.roman} onChange={this.handleChangeRoman} keyfilter={this.allowedRegExp}/>
                         <label className="form-label" for="form3Example3">N° Romano</label>
                         {this.errorMessage(this.state.romanErrorMessage)}
                       </div>
 
-                      {/* Password input */}
+                      {/* Arabic input */}
                       <div className="form-outline mb-4">
                         <input type="name" id="arabic" className={`${{'p-error': !!this.state.arabicErrorMessage}} ${"form-control"}`} value={this.state.arabic} onChange={this.handleChangeArabic} keyfilter="pint" />
                         <label className="form-label" for="form3Example4">N° Arábico</label>

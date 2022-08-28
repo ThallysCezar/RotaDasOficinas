@@ -1,7 +1,6 @@
 
 import { GiDesk } from "react-icons/gi";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import Navbar from './../../shared/components/navbar/Navbar';
 
 
@@ -34,14 +33,14 @@ const Home = () => {
         <div className="container-fluid text-center mt-5">
           <h3>Mas, quem sou eu?</h3>
           {/* Portfolio */}
-          <Link
+          <a
             className="btn btn-outline-light btn-floating m-1"
-            to="thallyscezar.github.io"
+            href="https://thallyscezar.github.io"
             role="button"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <GiDesk />
-          </Link>
+          </a>
           <p>Clique acima para ver meu portfólio</p>
         </div>
         <br/>
@@ -49,45 +48,44 @@ const Home = () => {
         <div>
           <div className="container footer__social">
             {/* GitHub */}
-            <Link
+            <a
               className="btn btn-outline-light btn-floating m-1"
-              to="github.com/thallyscezar"
+              href="https://www.github.com/thallyscezar"
               role="button"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <FaGithub />
-            </Link>
+            </a>
 
             {/* Facebook */}
-            <Link
+            <a
               className="btn btn-outline-light btn-floating m-1"
-              to="facebook.com/thallyscezar"
+              href="https://www.facebook.com/thallyscezar"
               role="button"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <FaFacebook />
-            </Link>
+            </a>
 
             {/* Instagram */}
-            <Link
+            <a
               className="btn btn-outline-light btn-floating m-1"
-              to="instagram.com/thallyscezar"
+              href="https://www.instagram.com/thallyscezar"
               role="button"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <FaInstagram />
-            </Link>
+            </a>
 
             {/* Linkedin */}
-            <Link 
-              to={{pathname: "linkedin.com/in/thallyscezar"}}
-              exact
+            <a 
+              href="https://www.linkedin.com/in/thallyscezar"
               className="btn btn-outline-light btn-floating m-1"
               role="button"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               <FaLinkedin />
-            </Link >
+            </a >
 
             {/* Section: Text */}
             <section className="mb-4 mt-2">

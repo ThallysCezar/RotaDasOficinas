@@ -1,0 +1,55 @@
+.app-converter {
+  padding-top: 1em;
+}
+
+.app-arrows {
+  text-align: center;
+}
+
+.navigacao {
+  position: relative;
+  left: 626px;
+  top: 56px;
+}
+
+.card1 {
+  background: hsla(0, 0%, 100%, 0.55);
+  backdrop-filter: blur(30px);
+  left: 182px;
+  top: 118px;
+}
+
+.card-corpo {
+  position: relative;
+  left: 3px;
+  top: 1px;
+  transition: none 0s ease 0s;
+}
+
+.cascading-right {
+  margin-right: -50px;
+}
+
+.texto-h1 {
+  position: relative;
+  left: 414px;
+  top: 128px;
+}
+
+.btn-split {
+  position: relative;
+  left: -15px;
+  top: 8px;
+}
+
+.btn-reset {
+  position: relative;
+  left: 8px;
+  top: 8px;
+}
+
+@media (max-width: 991.98px) {
+  .cascading-right {
+    margin-right: 0;
+  }
+}
