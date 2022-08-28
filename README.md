@@ -1,4 +1,4 @@
-# Projeto Pokedex
+# Desafio tecnico de programação
 
 ## Imagem do projeto
 <p style="align=center;">
