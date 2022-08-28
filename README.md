@@ -18,7 +18,7 @@ Esse projeto foi feito por mim, porem, como não estava conseguindo uma lógica 
 
 1 - Baixar o arquivo, código em sua máquina
 <p style="align=center;">
-  <img src="hhttps://github.com/ThallysCezar/RotaDasOficinas/blob/main/src/assets/github.jpeg" alt="github">
+  <img src="https://github.com/ThallysCezar/RotaDasOficinas/blob/main/src/assets/github.jpeg" alt="github">
 </p>
 2 - Extrair o arquivo em sua máquina
 <p style="align=center;">
